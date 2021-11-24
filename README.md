@@ -8,6 +8,11 @@ of smart contracts, you will need,
 - React Framework for frontend
 - Web3.storage as IPFS/Filecoin storage of tickets
 
+![](https://github.com/z5208980/stubr/blob/main/assets/readme/_uploadTicket.png)
+
+![](https://github.com/z5208980/stubr/blob/main/assets/readme/_uploadTicketSuccess.png)
+
+
 ## Run locally (localhost)
 
 1. Clone repo
