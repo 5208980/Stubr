@@ -1,0 +1,21 @@
+{
+  "name": "demoapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "minimist": "^1.2.5",
+    "nft.storage": "^5.0.0",
+    "nodemon": "^2.0.15",
+    "web3.storage": "^3.3.4"
+  }
+}
