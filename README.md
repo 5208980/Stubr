@@ -26,7 +26,7 @@ Image 1.2 Successful form submission, where you can view NFT on application (Ima
 
 http://localhost:3000/list/contract/ticketID (shows ticket information of the ticketId, listing and buy request)
 
-![](https://github.com/z5208980/stubr/blob/main/assets/readme/_uploadTicketSuccess.png)
+![](https://github.com/z5208980/stubr/blob/main/assets/readme/_listTicket_.png)
 Image 1.3 View Nft on Application, where owner can list ticket for sale
 
 ## Run locally (localhost)
