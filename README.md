@@ -13,3 +13,7 @@ cd frontend
 npm install     # If first time use
 npm start       # should start on port 3000
 ```
+
+Endpoints 
+- localhost/:PORT/upload
+- localhost/:PORT/list/contract/ticketID
