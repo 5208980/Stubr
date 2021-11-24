@@ -55,7 +55,8 @@ class MetaMask extends React.Component {
                     <Upload data={this.state}/>
                 </div>
                 : <div>
-                    <button onClick={this.connectToWeb3} className="btn btn-primary">Login into MetaMask</button>
+                    <h3>Stubr</h3>
+                    <button onClick={this.connectToWeb3} className="btn btn-primary">Connect to MetaMask</button>
                 </div>
                 }
             </div>

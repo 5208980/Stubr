@@ -12,16 +12,16 @@ class Upload extends React.Component {
         super(props);
         this.state = { 
             uploadTicket: {
-                ticketImage: "assets/1/ticket.png",
+                ticketImage: "assets/b/ticket.png",
 
                 // For POC, predefined values
-                ticketNumber: "1", 
-                ticketSupply: "50", 
+                ticketNumber: "2", 
+                ticketSupply: "25000", 
                 ticketType: "Adult",
                 eventDate: "01/01/2021",
-                artist: "Band 1",
+                artist: "Led Zeppelin",
             },
-            listTicket: { id: 0, },
+            nftId: 1,
             ticketCid: {},
             msg: "",
         
@@ -94,8 +94,6 @@ class Upload extends React.Component {
                     ticketSupply: this.state.uploadTicket.ticketSupply,
                     artist: this.state.uploadTicket.artist,
                 },
-
-                listTicket: 0,
             })
         })
         const j = await r.json();
@@ -104,6 +102,8 @@ class Upload extends React.Component {
         this.setState({ cidMetadata: j.cidMetaData }); 
 
         // Mint the ticket to Smart Contract
+        this.setState({ nftId: 1 });
+        // this.setState({ nftId: methodSend(this.state.web3, this.state.account, this.state.ticketContract, "send", mintTicket, [this.state.uploadTicket.ticketSupply, this.state.cidMetadata] });
     }
 
     handleTicketChange = (key, e) => {
@@ -117,10 +117,6 @@ class Upload extends React.Component {
             this.setState({ uploadTicket: { [key]: e.target.value } });
         }
     };
-
-    // handleListChange = (key, e) => {
-    //     this.setState({ listTicket: { [key]: e.target.value } });
-    // };
 
     render() {
         return (
@@ -149,6 +145,7 @@ class Upload extends React.Component {
                 {this.state.msg}
                 {this.state.msg === "Ticket stored on IPFS/Filecoin!" &&
                 <div>
+                    <a href={"list/adsad/" + this.state.nftId} class="btn btn-primary m-2" target="_self">View NFT Ticket</a>
                     <a href={"https://" + this.state.cidImage + ".ipfs.dweb.link/ticket.png"} class="btn btn-primary m-2" target="_blank">View Ticket on IPFS</a>
                     <a href={"https://" + this.state.cidMetadata + ".ipfs.dweb.link/metadata.json"} class="btn btn-primary m-2" target="_blank">View Metadata on IPFS</a>
                 </div>}

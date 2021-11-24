@@ -27,16 +27,14 @@ app.post("/upload", asyncMiddleware(async (req, res, next) => {
     console.log('Uploading Ticket ...');
     const fileImage = await w3s.getFilesFromPath(ticket);
     const cidImage = await storage.put(fileImage);    // Upload Ticket Stub Image to IPFS
-
-    // Since storage.put() doesn't allow for variables, instead store the metadata in file then used that file to store on IPFS
-    // const cidMetadata = await storage.put(JSON.stringify(md));    // Easier if we can do this
+    
     // let md = { cid: cidImage, metadata: metadata };
     let dir = ticket.split('/');
     dir.pop()
     const metaDataDir =`${dir.join('/')}/metadata.json`;
 
     // await writeFile(metaDataDir, JSON.stringify(md, null, 4));
-    // console.log('Uploading Metadata ...');
+    console.log('Uploading Metadata ...');
     const fileMetaData = await w3s.getFilesFromPath(metaDataDir);
     const cidMetaData = await storage.put(fileMetaData);    // Store metadata on IPFS with link to ticket
 

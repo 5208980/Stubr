@@ -16,8 +16,9 @@ function List() {
     const [ticketState, setTickerState] = useState(false);
 
     const [ticketContract, setTicketContract] = useState({});
-    const [nftImg, setNFTImg] = useState('');
+    const [nftImage, setNFTImage] = useState('');
     const [nftMetadata, setNFTMetadata] = useState({});
+    const [show, setShow] = useState(false);
 
     useEffect(async () => {
         if (window.ethereum) {
@@ -49,11 +50,12 @@ function List() {
         // setTicketState(await methodSend(web3.web3, accountInfo.address, ticketContract, 'call', 'getTicketState', [id]));  // Should return true/false from contract
 
         //  const uri = setTicketState(await methodSend(web3.web3, accountInfo.address, getUri, 'call', 'getTicketState', [id]));  // Should return true/false from contract
-        const uri = `https://bafybeifxpnmytym6iyzahsxrf2ydoozi5rxctgp3e424fttrn7for2afai.ipfs.dweb.link/metadata.json`;
+        const uri = `https://bafybeid3zygmgubn4glsja4nren43tpq3oypbsewmky2l6ct4iejjmey6m.ipfs.dweb.link/metadata.json`;
         const r = await fetch(uri, { method: 'GET' });
         const j = await r.json();
-        console.log(j);
-        setNFTMetadata(j);
+        setNFTImage(j.cid);
+        setNFTMetadata(j.metadata);
+        console.log(nftImage);
     }, []);
 
     function listTicket() {
@@ -64,18 +66,23 @@ function List() {
         // await methodSend(web3.web3, accountInfo.address, ticketContract, 'call', 'transferTicket', [id]);
     }
 
+    function showInformation() {
+        setShow(!show);
+    }
+
     function loadAppropiateHTML() {
         if(ticketOwner) {
             return (
-                <div>
-                    <input type="text" className="form-control" placeholder="Place price for ticket"/>
-                    <button onClick={listTicket} className="btn btn-primary m-4">List Ticket</button>
+                <div className="form-group">
+                    <input type="text" className="form-control" placeholder="Place price for ticket (IN FIL)"/>
+                    <input type="text" className="form-control" placeholder="Wallet Address"/>
+                    <small className="form-text text-muted">(Empty means to anyone can buy it)</small>
+                    <button onClick={listTicket} className="btn btn-primary m-2">List Ticket</button>
                 </div>
             );
         } else {
             return (
                 <div>
-                    Owner: {ticketOwner}
                     <button onClick={buyTicket} className="btn btn-primary m-4">Buy Ticket</button>
                 </div>
             );
@@ -85,13 +92,20 @@ function List() {
     return (
         <div>
             <h3>ID: {id}</h3>
-            <img src={`https://${nftMetadata.cid}.ipfs.dweb.link/ticket.png`}/>
-            {/* <div>TicketId: {nftMetadata.metadata.ticketNumber}</div>
-            <div>Artist: {nftMetadata.metadata.artist}</div> */}
+            <img className="p-5" src={`https://${nftImage}.ipfs.dweb.link/ticket.png`}/>
+            {show && 
+            <div>
+                <div>TicketOwners: {ticketOwner}</div>
+               <div>Artist: {nftMetadata.artist}</div>
+               <div>Supply: {nftMetadata.supply}</div>
+               <div>EventDate: {nftMetadata.eventDate}</div>
+            </div>}
+
+            <div>
+                <button onClick={showInformation} className="btn btn-primary m-2">Ticket Information</button>
+            </div>
 
             {loadAppropiateHTML()}
-
-            {/* Do Sell, but first we'll need ticketState and ticketPrice */}
         </div>
     );
 }
