@@ -8,10 +8,26 @@ of smart contracts, you will need,
 - React Framework for frontend
 - Web3.storage as IPFS/Filecoin storage of tickets
 
+## Endpoints 
+http://localhost:3000/ (connect to metamask)
+
+http://localhost:3000/upload (upload ticket image + metadata to web3.storage and mint on smart contract)
+For the `Ticket Image` input in `/upload`, you can statily select one of the filepaths
+- assets/1/ticket.png
+- assets/a/ticket.png
+- assets/b/ticket.png
+- assets/c/ticket.png
+
 ![](https://github.com/z5208980/stubr/blob/main/assets/readme/_uploadTicket.png)
+Image 1.1 Form filled to store using Web3.storage Ticket + Metadata
 
 ![](https://github.com/z5208980/stubr/blob/main/assets/readme/_uploadTicketSuccess.png)
+Image 1.2 Successful form submission, where you can view NFT on application (Image 1.3), Ticket on IPFS, Metadata on IPFS
 
+http://localhost:3000/list/contract/ticketID (shows ticket information of the ticketId, listing and buy request)
+
+![](https://github.com/z5208980/stubr/blob/main/assets/readme/_uploadTicketSuccess.png)
+Image 1.3 View Nft on Application, where owner can list ticket for sale
 
 ## Run locally (localhost)
 
@@ -33,15 +49,3 @@ cd frontend
 npm install     # If first time use
 npm start       # should start on port 3000
 ```
-
-## Endpoints 
-http://localhost:3000/ (connect to metamask)
-
-http://localhost:3000/upload (upload ticket image + metadata to web3.storage and mint on smart contract)
-For the `Ticket Image` input in `/upload`, you can statily select one of the filepaths
-- assets/1/ticket.png
-- assets/a/ticket.png
-- assets/b/ticket.png
-- assets/c/ticket.png
-
-http://localhost:3000/list/contract/ticketID (shows ticket information of the ticketId, listing and buy request)
