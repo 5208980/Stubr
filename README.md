@@ -42,6 +42,7 @@ cd stubr
 
 2. On one terminal, setup express node (this is to connect to Web3.storage)
 ```sh
+cd backend
 npm install     # If first time use
 node run dev    # runs express server
 ```
