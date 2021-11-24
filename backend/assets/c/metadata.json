@@ -1,7 +1,9 @@
 {
     "cid": "bafybeifpgi3elbqbttwa7vqcqphmalvs72iooae7xvlbkcssc7uk5olldu",
+    "image": "https://bafybeifpgi3elbqbttwa7vqcqphmalvs72iooae7xvlbkcssc7uk5olldu.ipfs.dweb.link/ticket.png",
     "metadata": {
-        "ticketNumber": "3",
+        "ticketNumber": "4",
+        "supply": "25000",
         "ticketType": "Adult",
         "eventDate": "01/01/2021",
         "artist": "AC/DC"

@@ -1,8 +1,10 @@
 {
     "cid": "bafybeih5zweew2aquaupebnxwm3fs3i2j3sz3frso4ah4ktkccrkfid4ty",
+    "image": "https://bafybeih5zweew2aquaupebnxwm3fs3i2j3sz3frso4ah4ktkccrkfid4ty.ipfs.dweb.link/ticket.png",
     "metadata": {
-        "ticketNumber": "2",
+        "ticketNumber": "3",
         "supply": "25000",
+        "ticketType": "Adult",
         "eventDate": "01/01/2021",
         "artist": "Led Zeppelin"
     }

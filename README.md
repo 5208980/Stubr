@@ -3,6 +3,9 @@ React frontend, that is connected to Express Node server. This allows for connec
 of smart contracts, you will need,
 - MetaMask Extension
 - Connection to Rinkeby Testnet
+You an access the NFT here: https://testnets.opensea.io/collection/unidentified-contract-xm6fkrhcik
+ERC1155 smart contract: https://rinkeby.etherscan.io/address/0x04BA9bAd8Ca4B3fF2eeF9dbc30C5A12328dF3Dc2
+Proof of web3.storage tickets on IPFS: https://bafybeieaf5ckfa35ydx56lr6ixbnmfbzbll6azg4dp6jh4yjzgxwcqiiva.ipfs.dweb.link/metadata.json 
 
 ## Technologies Used
 - React Framework for frontend
@@ -49,3 +52,4 @@ cd frontend
 npm install     # If first time use
 npm start       # should start on port 3000
 ```
+

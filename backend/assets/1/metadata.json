@@ -1,7 +1,9 @@
 {
     "cid": "bafybeieowttuzk47rfm27wbsisqeey2sqov2zgjd7dnyem7ozfolp7ioxm",
+    "image": "https://bafybeieowttuzk47rfm27wbsisqeey2sqov2zgjd7dnyem7ozfolp7ioxm.ipfs.dweb.link/ticket.png",
     "metadata": {
         "ticketNumber": "1",
+        "supply": "25000",
         "ticketType": "Adult",
         "eventDate": "01/01/2021",
         "artist": "The Beatles"
