@@ -92,7 +92,7 @@ function List() {
     return (
         <div>
             <h3>ID: {id}</h3>
-            <img className="p-5" src={`https://${nftImage}.ipfs.dweb.link/ticket.png`}/>
+            <img className="ticket-image rounded-3 m-5" src={`https://${nftImage}.ipfs.dweb.link/ticket.png`}/>
             {show && 
             <div>
                 <div>TicketOwners: {ticketOwner}</div>
