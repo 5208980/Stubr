@@ -1,19 +1,27 @@
 ## Requirements
 - MetaMask Extension
 
-### Start backend Express Server to connect to Web3.storage and IPFS
+### Run locally (localhost)
+
+1. Clone repo
+```
+git clone git@github.com:z5208980/stubr.git
+cd stubr
+```
+
+2. Setup express node (on one terminal) (this is to connect to Web3.storage)
 ```sh
 npm install     # If first time use
 node run dev    # runs express server
 ```
 
-### In another terminal, To run frontend React App,
+3. In another terminal, To run frontend react app, (this is to connet to Web3)
 ```sh
 cd frontend
 npm install     # If first time use
 npm start       # should start on port 3000
 ```
 
-Endpoints 
+Accessible URLs 
 - localhost/:PORT/upload
 - localhost/:PORT/list/contract/ticketID
