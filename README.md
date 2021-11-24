@@ -1,6 +1,7 @@
 ## Description
 React frontend, that is connected to Express Node server. This allows for connection of Web3.storage. To use the implementation 
 of smart contracts, you will need,
+- Node (npm)
 - MetaMask Extension
 - Connection to Rinkeby Testnet
 You an access the NFT here: https://testnets.opensea.io/collection/unidentified-contract-xm6fkrhcik
