@@ -12,14 +12,19 @@ import Upload from './components/Upload';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<MetaMask />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/list/:contract/:id" element={<List />} />
-        <Route path="/upload" element={<Upload />} />
-      </Routes>
-    </Router>
+    <div className="App">
+      <div className="App-header">
+        
+      <Router>
+        <Routes>
+          <Route path="/" element={<MetaMask />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/list/:contract/:id" element={<List />} />
+          <Route path="/upload" element={<Upload />} />
+        </Routes>
+      </Router>
+      </div>
+    </div>
   );
 }
 export default App;

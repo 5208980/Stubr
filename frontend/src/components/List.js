@@ -4,6 +4,8 @@ import Web3 from 'web3';
 
 import MetaMask from './MetaMask';
 import { methodSend } from '../utils/send';
+import eventShopAddr from '../contracts/address';
+import eventShopABI from '../contracts/abi';
 
 function List() {
     let { contract, id } = useParams();
@@ -41,9 +43,7 @@ function List() {
 
         // console.log(web3.web3);
         // I think abi should just be ERC 1155 default
-        // might be from the /:contract
-        // const abi = {} // If we have contract, can load from import
-        // setTicketContract({ ticketContract: new web3.web3.eth.Contract(abi, contract, {}) });
+        // setTicketContract({ ticketContract: new web3.web3.eth.Contract(eventShopABI, eventShopAddr, {}) });
         // // This will determine if user can list ticket
         // setTicketOwner(await methodSend(web3.web3, accountInfo.address, ticketContract, 'call', 'isTicketOwner', [id]));  // Should return true/false from contract
         // setTicketState(await methodSend(web3.web3, accountInfo.address, ticketContract, 'call', 'getTicketState', [id]));  // Should return true/false from contract
@@ -68,15 +68,15 @@ function List() {
         if(ticketOwner) {
             return (
                 <div>
-                    <input type="text" placeholder="Place price for ticket"/>
-                    <button onClick={listTicket}>List Ticket</button>
+                    <input type="text" className="form-control" placeholder="Place price for ticket"/>
+                    <button onClick={listTicket} className="btn btn-primary m-4">List Ticket</button>
                 </div>
             );
         } else {
             return (
                 <div>
                     Owner: {ticketOwner}
-                    <button onClick={buyTicket}>Buy Ticket</button>
+                    <button onClick={buyTicket} className="btn btn-primary m-4">Buy Ticket</button>
                 </div>
             );
         }

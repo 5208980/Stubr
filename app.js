@@ -24,21 +24,19 @@ app.post("/upload", asyncMiddleware(async (req, res, next) => {
     const metadata = req.body.metadata;
     const storage = new w3s.Web3Storage({ token });
 
-    // const cidImage = "sadasregdfge";
-    // const cidMetaData = { something: "something" } 
-
     console.log('Uploading Ticket ...');
     const fileImage = await w3s.getFilesFromPath(ticket);
     const cidImage = await storage.put(fileImage);    // Upload Ticket Stub Image to IPFS
 
     // Since storage.put() doesn't allow for variables, instead store the metadata in file then used that file to store on IPFS
     // const cidMetadata = await storage.put(JSON.stringify(md));    // Easier if we can do this
-    // Inefficieny, but the only way it works.
-    let md = { cid: cidImage, metadata: metadata };
-    const metaDataDir = "assets/metadata.json";
+    // let md = { cid: cidImage, metadata: metadata };
+    let dir = ticket.split('/');
+    dir.pop()
+    const metaDataDir =`${dir.join('/')}/metadata.json`;
 
     // await writeFile(metaDataDir, JSON.stringify(md, null, 4));
-    console.log('Uploading Metadata ...');
+    // console.log('Uploading Metadata ...');
     const fileMetaData = await w3s.getFilesFromPath(metaDataDir);
     const cidMetaData = await storage.put(fileMetaData);    // Store metadata on IPFS with link to ticket
 
@@ -47,15 +45,6 @@ app.post("/upload", asyncMiddleware(async (req, res, next) => {
     res.end(JSON.stringify({ cidImage: cidImage, cidMetaData: cidMetaData }));
 }));
 
-// app.get("/assets/:cid", asyncMiddleware(async (req, res, next) => {
-//     console.log(req.params.contract);
-//     console.log(req.params.id);
-
-
-//     res.setHeader('Content-Type', 'application/json');
-//     res.end(JSON.stringify({ a: 1 }));
-// }));
-  
 const PORT = process.env.PORT || 8080;
   
 app.listen(PORT, console.log(`Server started on port ${PORT}`));
